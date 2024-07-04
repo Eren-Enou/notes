@@ -1,7 +1,8 @@
-from flask import render_template, request, redirect, url_for
-from . import notes_bp
+from flask import Blueprint, render_template, request, redirect, url_for
 from ..models import db
 from ..models.note import Note
+
+notes_bp = Blueprint('notes_bp', __name__)
 
 @notes_bp.route('/add_note', methods=['GET', 'POST'])
 def add_note():
